@@ -1,0 +1,130 @@
+.banner-wrapper {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  overflow-x: auto;
+  }
+  
+  /* Cột trái: slider chiếm 7 phần */
+  .slider-column {
+    position: relative;
+    background-color: #fff;
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+    width: 880px;
+    height: 260px;
+    background-color: #fff;
+  }
+  
+  .slide-container {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+    background-color: #fff;
+  }
+  
+  .slide {
+    width: 880px;
+    height: 260px;
+    flex-shrink: 0;
+    background-color: #fff;
+  }
+  
+  .slide img {
+    width: 880px;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Nút điều hướng */
+  .nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .slider:hover .nav {
+    opacity: 1;
+  }
+  
+  .nav span {
+    font-size: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 10px;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav span.next {
+    border-radius: 8px 0 0 8px;
+  }
+  
+  /* Cột phải: hình ảnh chiếm 3 phần */
+  .image-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+  
+  .image-box {
+    padding: 1px;
+    margin-bottom: 2px;
+    background-color: #fff;
+  }
+  
+  .image-box img {
+    width: 435px;
+    height: 128px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .image-box:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Slider dots navigation */
+  .slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+  
+  .dot:hover {
+    background-color: #fff;
+  }
+  

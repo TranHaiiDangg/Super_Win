@@ -1,0 +1,53 @@
+body {
+    background-color: #D3D3D3;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .container-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  background-color: #fff;
+  overflow-x: auto;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  
+  white-space: nowrap; /* không cho xuống dòng */
+}
+
+.menu-item:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover img {
+  transform: scale(1.1);
+}
+
+.menu-item p {
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+}
