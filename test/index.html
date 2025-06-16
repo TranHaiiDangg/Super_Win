@@ -1677,6 +1677,166 @@
             font-weight: 600;
             color: #333;
         }
+
+
+        /*<!-- Container top-sales and top-search -->*/
+        .product-slider-wrapper {
+            max-width: 1320px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .slider-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .product-slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .item-card {
+            min-width: 160px;
+            margin-right: 15px;
+            background: white;
+            border-radius: 8px;
+            padding: 10px 10px 30px 10px; /* Thêm padding bottom để chừa chỗ cho overlay */
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: #007bff;
+        }
+
+        .item-thumbnail {
+            width: 80px;
+            height: 120px;
+            object-fit: contain;
+            margin: 0 auto 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .item-card:hover .item-thumbnail {
+            transform: scale(1.05);
+        }
+
+        .sales-count {
+            font-size: 12px;
+            color: #ff6b35;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .item-sold-info {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.3;
+            height: 35px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 10px; /* Thêm margin bottom */
+        }
+
+        .slider-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .slider-nav-btn:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-nav-btn.btn-prev {
+            left: -20px;
+        }
+
+        .slider-nav-btn.btn-next {
+            right: -20px;
+        }
+
+        .cart-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 12px 8px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-size: 13px;
+            font-weight: bold;
+            height: 40px; /* Cố định chiều cao */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 8px 8px; /* Bo góc phù hợp với card */
+        }
+
+        .item-card:hover .cart-overlay {
+            transform: translateY(0);
+        }
+
+        .item-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 240px; /* Cố định chiều cao tối thiểu */
+        }
+
+        @media (max-width: 768px) {
+            .item-card {
+                min-width: 150px;
+            }
+            
+            .slider-nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }   
     </style>
 </head>
 <body>
@@ -2242,6 +2402,78 @@
         </div>
     </div>
 </div>
+
+<!--Top Sales-->
+<div class="product-slider-wrapper">
+    <h2 class="slider-heading">Bán chạy</h2>
+    
+    <div class="product-slider-container">
+        <button class="slider-nav-btn btn-prev" onclick="slideProducts(-1)">‹</button>
+        <button class="slider-nav-btn btn-next" onclick="slideProducts(1)">›</button>
+        
+        <div class="slider-track" id="productSlider">
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="sp" class="item-thumbnail">
+                <div class="sales-count">8.31M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Tẩy Trang Mặt" class="item-thumbnail">
+                <div class="sales-count">7.284M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Chống Nắng Da Mặt" class="item-thumbnail">
+                <div class="sales-count">6.634M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Kem / Gel / Dầu Dưỡng" class="item-thumbnail">
+                <div class="sales-count">5.892M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Serum / Tinh Chất" class="item-thumbnail">
+                <div class="sales-count">2.864M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Mặt Nạ Giấy" class="item-thumbnail">
+                <div class="sales-count">2.757M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Toner / Nước Cân Bằng" class="item-thumbnail">
+                <div class="sales-count">2.456M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+            
+            <div class="item-card">
+                <img src="/image/sp1.png" alt="Gel Rửa Mặt" class="item-thumbnail">
+                <div class="sales-count">1.892M đã bán</div>
+                <div class="item-title">Máy bơm nước Super Win 2 HP</div>
+                <div class="cart-overlay">Thêm vào giỏ</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <!-- Banner Slide-->
 <script>
     class MainSlider {
@@ -3055,6 +3287,134 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSlide();
     });
 </script>
+
+<!--Top Sales-->
+<script>document.addEventListener('DOMContentLoaded', function() {
+    let slideIndex = 0;
+    const itemsVisible = 6;
+    const productSlider = document.getElementById('productSlider');
+    const slideItems = document.querySelectorAll('.item-card');
+    const totalSlides = slideItems.length;
+    const maxSlideIndex = Math.max(0, totalSlides - itemsVisible);
+    
+    // Auto-slide configuration
+    const autoSlideInterval = 3000; // 3 seconds
+    let autoSlideTimer;
+
+    // Initialize auto-slide
+    function startAutoSlide() {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = setInterval(autoSlideProducts, autoSlideInterval);
+    }
+
+    // Reset auto-slide timer
+    function resetAutoSlide() {
+        clearInterval(autoSlideTimer);
+        startAutoSlide();
+    }
+
+    // Auto-slide functionality
+    function autoSlideProducts() {
+        if (slideIndex >= maxSlideIndex) {
+            slideIndex = 0;
+        } else {
+            slideIndex++;
+        }
+        const translateDistance = slideIndex * -195;
+        productSlider.style.transform = `translateX(${translateDistance}px)`;
+    }
+
+    // Make slideProducts function global with reset functionality
+    window.slideProducts = function(direction) {
+        slideIndex += direction;
+        
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        } else if (slideIndex > maxSlideIndex) {
+            slideIndex = maxSlideIndex;
+        }
+        
+        const translateDistance = slideIndex * -195; // 180px width + 15px margin
+        productSlider.style.transform = `translateX(${translateDistance}px)`;
+        
+        // Reset auto-slide timer when manually navigating
+        resetAutoSlide();
+    };
+
+    // Start auto-slide when page loads
+    startAutoSlide();
+
+    // Touch/swipe support for mobile devices
+    let touchStartX = 0;
+    let isDragging = false;
+
+    if (productSlider) {
+        productSlider.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        productSlider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        productSlider.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchDiff = touchStartX - touchEndX;
+            
+            if (Math.abs(touchDiff) > 50) {
+                if (touchDiff > 0) {
+                    window.slideProducts(1); // Swipe left - next (auto-resets timer)
+                } else {
+                    window.slideProducts(-1); // Swipe right - prev (auto-resets timer)
+                }
+            }
+            
+            isDragging = false;
+        });
+
+        // Pause auto-slide when hovering over slider
+        productSlider.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideTimer);
+        });
+
+        // Resume auto-slide when mouse leaves slider
+        productSlider.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+    }
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            window.slideProducts(-1); // Auto-resets timer
+        } else if (e.key === 'ArrowRight') {
+            window.slideProducts(1); // Auto-resets timer
+        }
+    });
+
+    // Add click animation effect to item cards
+    slideItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.style.transform = 'translateY(-5px) scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+
+    // Pause auto-slide when page is not visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            clearInterval(autoSlideTimer);
+        } else {
+            startAutoSlide();
+        }
+    });
+});</script>
 </body>
 <style>
     
